@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: rgb(167, 123, 123);
+    background-color: rgb(202, 41, 41);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,7 @@ form div{
 
 .box{
     background-color: bisque;
-    height: 800px;
+    height: 1000px;
     width: 800px;
     display: flex;
     flex-direction: column;
@@ -48,10 +48,14 @@ input{
     padding-left: 10px;
 }
 
+.botao{
+    margin: 20px;
+}
+
 button{
-    margin-top: 20px;
-    height: 30px;
-    width: 150px;
+    margin: 10px;
+    height: 60px;
+    width: 135px;
 }
 .resultado{
     margin-top: 50px;
