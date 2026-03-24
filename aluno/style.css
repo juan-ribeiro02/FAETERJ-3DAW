@@ -1,51 +1,195 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container{
-    background-color: white;
-    padding: 30px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Formulários */
+.formulario {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
     border-radius: 8px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-h1{
-    text-align: center;
+.formulario h2 {
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4CAF50;
 }
 
-.campo{
+.campo {
     margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
 }
 
-label{
-    margin-bottom: 5px;
+.campo label {
+    display: inline-block;
+    width: 80px;
+    font-weight: bold;
+    color: #555;
 }
 
-input{
+.campo input {
     padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
-button{
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background-color: #3498db;
+.campo input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Botões */
+button {
+    background-color: #4CAF50;
     color: white;
-    font-size: 16px;
-    border-radius: 5px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 14px;
+    margin-left: 80px;
 }
 
-button:hover{
-    background-color: #2980b9;
+button:hover {
+    background-color: #45a049;
+}
+
+.cancelar {
+    color: #999;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.cancelar:hover {
+    color: #666;
+    text-decoration: underline;
+}
+
+/* Lista de Alunos */
+.lista {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lista h2 {
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4CAF50;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Botões de ação */
+.acoes {
+    white-space: nowrap;
+}
+
+.btn-editar, .btn-excluir {
+    display: inline-block;
+    padding: 5px 12px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 12px;
+    margin: 0 2px;
+}
+
+.btn-editar {
+    background-color: #2196F3;
+    color: white;
+}
+
+.btn-editar:hover {
+    background-color: #0b7dda;
+}
+
+.btn-excluir {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-excluir:hover {
+    background-color: #da190b;
+}
+
+/* Mensagem quando não há alunos */
+.lista p {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .campo label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .campo input {
+        width: 100%;
+    }
+    
+    button {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 6px;
+    }
+    
+    .btn-editar, .btn-excluir {
+        padding: 3px 8px;
+        font-size: 10px;
+    }
 }
