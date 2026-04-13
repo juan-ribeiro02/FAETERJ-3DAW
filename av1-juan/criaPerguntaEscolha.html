@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criar Pergunta</title>
+  </head>
+  <body>
+    <div class="conteiner">
+      <form action="createPerguntaEscolha.php" method="POST" class="formulario">
+        <label for="pergunta">Resposta</label>
+        <input type="text" name="pergunta" placeholder="Pergunta" required /><br>
+
+        <label for="alternativa1">A</label>
+        <input type="text" name="alternativa1" placeholder="Alternativa A" required /><br>
+
+        <label for="alternativa2">B</label>
+        <input type="text" name="alternativa2" placeholder="Alternativa B" required /><br>
+
+        <label for="alternativa3">C</label>
+        <input type="text" name="alternativa3" placeholder="Alternativa C" required /><br>
+
+        <label for="alternativa4">D</label>
+        <input type="text" name="alternativa4" placeholder="Alternativa D" required /><br>
+
+        <label for="resposta">Resposta Certa</label>
+        <input type="text" name="resposta" placeholder="Resposta" required />        
+
+        <button type="submit">Criar</button>
+        <a href="menu.html">Voltar</a>
+      </form>
+    </div>
+  </body>
+</html>
