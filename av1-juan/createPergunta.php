@@ -6,18 +6,36 @@ session_start();
         $idPergunta = $_SESSION['teste'];
         $pergunta = $_POST["pergunta"];
         $resposta = $_POST["modelo"];
-    
-        if (!file_exists("perguntas.txt")) {
-            $temp = fopen("perguntas.txt", "w");
-            fclose($temp);
+
+        if(isset($_POST['linha'])) {
+            $linhas = file("perguntas.txt");
+
+            $indice = $_POST['linha'];
+
+            $dados = explode(",", trim($linhas[$indice]));
+            $id = $dados[0];
+
+            $linhas[$indice] = $idPergunta . ", " . $pergunta . ", " . $resposta . "\n";
+
+            file_put_contents("perguntas.txt", implode("", $linhas));
+
+            header("Location: alterarPT.php");
+            exit();
+
+        } else {
+            if (!file_exists("perguntas.txt")) {
+                $temp = fopen("perguntas.txt", "w");
+                fclose($temp);
+            }
+        
+            $arquivo = fopen("perguntas.txt", "a") or die("ERROR");
+            $linha = $idPergunta . ", " . $pergunta . ", " . $resposta . "\n";
+            fwrite($arquivo, $linha);
+        
+            header("Location: criaPerguntaTexto.html");
+            exit();
         }
     
-        $arquivo = fopen("perguntas.txt", "a") or die("ERROR");
-        $linha = $idPergunta . ", " . $pergunta . ", " . $resposta . "\n";
-        fwrite($arquivo, $linha);
-    
-        header("Location: criaPerguntaTexto.html");
-        exit();
     }
 }
 

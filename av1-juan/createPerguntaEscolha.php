@@ -10,17 +10,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $a4 = $_POST['alternativa4'];
     $resposta = $_POST['resposta'];
 
-    if (!file_exists("perguntasAlt.txt")) {
-        $temp = fopen("perguntasAlt.txt", "w");
-        fclose($temp);
+    if(isset($_POST['linha'])) {
+        $linhas = file("perguntasAlt.txt");
+
+        $indice = $_POST['linha'];
+
+        $dados = explode(",", trim($linhas[$indice]));
+        $id = $dados[0];
+
+        $linhas[$indice] = $id . ", " . $pergunta . ", " . $a1 . ", " . $a2 . ", " . $a3 . ", " . $a4 . ", " . $resposta . "\n";
+
+        file_put_contents("perguntasAlt.txt", implode("", $linhas));
+
+        header("Location: alterarPME.php");
+        exit();
+
+    } else {
+        if (!file_exists("perguntasAlt.txt")) {
+            $temp = fopen("perguntasAlt.txt", "w");
+            fclose($temp);
+        }
+        
+        $arquivo = fopen("perguntasAlt.txt", "a") or die("ERROR");
+        $linha = $id . ", " . $pergunta . ", " . $a1 . ", " . $a2 . ", " . $a3 . ", " . $a4 . ", " . $resposta . "\n";
+        fwrite($arquivo, $linha);
+    
+        fclose($arquivo);
+
+        header("Location: criaPerguntaEscolha.html");
+        exit();
     }
-    
-    $arquivo = fopen("perguntasAlt.txt", "a") or die("ERROR");
-    $linha = $id . ", " . $pergunta . ", " . $a1 . ", " . $a2 . ", " . $a3 . ", " . $a4 . ", " . $resposta . "\n";
-    fwrite($arquivo, $linha);
-    
-    header("Location: criaPerguntaEscolha.html");
-    exit();
 }
 
 ?>
