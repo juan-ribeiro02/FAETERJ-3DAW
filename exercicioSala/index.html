@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <div class="form">
+            <h1>Calculadora</h1>
+            <input type="number" name="a" id="a">
+            <input type="number" name="b" id="b">
+            <input type="text" name="operacao" id="operacao">
+            <button onclick="soma()">calcular</button>
+            <p id="resultado"></p>
+        </div>
+    </div>
+    
+
+    
+    <script>
+        function soma(){
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var operacao = document.getElementById("operacao").value;
+            var resultado;
+
+            switch(operacao){
+                case "+":
+                    resultado = a + b;
+                    break;
+                case "-":
+                    resultado = a - b;
+                    break;
+                case "*":
+                    resultado = a * b;
+                    break;
+                case "/":
+                    resultado = a / b;
+                    break;    
+                default:
+                    resultado = "cu";
+            }
+            document.getElementById("resultado").textContent = "Resultado = " + resultado;
+        }
+    </script>
+</body>
+</html>
