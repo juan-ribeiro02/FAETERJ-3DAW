@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Listar perguntas e escolhas</title>
+</head>
+<body>
+    <div>
+        <h5>Listar Perguntas</h5>
+        <form id="formListarTodas">
+            <input type="submit" value="Listar Perguntas com alternativas" name="btn_alternativas">
+            <input type="submit" value="Listar Perguntas de texto" name="btn_texto">
+        </form>
+        
+        <div id="resultado" style="margin-top: 20px;"></div>
+        <br>
+        <button type="button" onclick="location.href='menu.html'">Voltar ao Menu</button>
+    </div>
+
+    <script>
+        document.getElementById('formListarTodas').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('tipo_busca', event.submitter.name);
+
+            const divResultado = document.getElementById('resultado');
+            divResultado.textContent = 'Buscando...';
+            divResultado.style.color = 'black';
+
+            fetch('api_listarPerguntas.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.sucesso) {
+                    divResultado.innerHTML = data.html;
+                } else {
+                    divResultado.style.color = 'red';
+                    divResultado.textContent = data.mensagem;
+                }
+            })
+            .catch(error => {
+                divResultado.style.color = 'red';
+                divResultado.textContent = "Erro na requisição.";
+            });
+        });
+    </script>
+</body>
+</html>

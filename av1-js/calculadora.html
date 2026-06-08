@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input, select, button {
+            margin: 10px 0;
+            padding: 5px;
+        }
+    </style>
+    <script>
+    function calcular() {
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        var operacao = document.getElementById("operacao").value;
+        var resultado;
+
+        switch (operacao) {
+            case "soma":
+                resultado = num1 + num2;
+                break;
+            case "sub":
+                resultado = num1 - num2;
+                break;
+            case "multiplicacao":
+                resultado = num1 * num2;
+                break;
+            case "divisao":
+                if (num2 !== 0) {
+                    resultado = num1 / num2;
+                } else {
+                    resultado = "Error: Divisão por 0";
+                }
+                break;
+            default:
+                resultado = "Operaçao invalida";
+        }
+
+        document.getElementById("resultado").textContent = "Resultado: " + resultado;
+    }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Calculadora</h1>
+        <input type="number" name="num1" id="num1">
+        <br>
+        <input type="number" name="num2" id="num2">
+        <br>
+        <select name="operacao" id="operacao">
+            <option value="soma">Soma</option>
+            <option value="sub">Subtração</option>
+            <option value="multiplicacao">Multiplicação</option>
+            <option value="divisao">Divisão</option>
+        </select>
+        <br>
+        <button onclick="calcular()">Calcular</button>
+        <p id="resultado"></p>
+    </div>
+</body>
+</html>

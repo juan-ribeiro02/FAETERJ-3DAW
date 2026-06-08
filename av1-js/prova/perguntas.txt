@@ -1,0 +1,3 @@
+Id;Pergunta;Resposta1;Resposta2;Resposta3;Resposta4;RespostaCorreta
+01;2 + 4 é quanto;6;4;0;-4;6
+02;quanto é "2" + 2?;5;4;22;44;22

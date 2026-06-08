@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h5 {
+    color: #2c3e50;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"], input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+a{
+    color: #3498db;
+    text-decoration: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button, input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+#botoes {
+    width: 80vw;
+    display: grid;
+    width: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+
+}   
+#botoes button:last-child {
+    grid-column: 1 / -1;
+    width: auto;
+    justify-self: center;
+}

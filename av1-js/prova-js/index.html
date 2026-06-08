@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+<div>
+    <form id="formLogin">
+        <h1>Login</h1>
+        <label for="iname">Nome</label>
+        <input type="text" name="nome" id="iname" required>
+        <br><br>
+        
+        <label for="iemail">Email</label>
+        <input type="email" name="email" id="iemail" required>
+        <br><br>
+        
+        <label for="ipassword">Senha</label>
+        <input type="password" name="senha" id="ipassword" required>
+        <br><br>
+        
+        <input type="submit" value="Login">
+        <br>
+        
+        <p id="mensagemErro" style="color: red;"></p>
+        <div id="mensagemSucesso"></div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('formLogin').addEventListener('submit', function(event) {
+        
+        event.preventDefault(); 
+
+        
+        const formData = new FormData(this);
+        const divErro = document.getElementById('mensagemErro');
+        const divSucesso = document.getElementById('mensagemSucesso');
+
+       
+        divErro.textContent = '';
+        divSucesso.innerHTML = '';
+
+        
+        fetch('api_login.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.sucesso) {
+                
+                document.querySelector("input[type='submit']").style.display = 'none';
+                divSucesso.innerHTML = `Bem Vindo, ${data.nome}!<br><a href='menu.html'>Ir para o menu</a>`;
+            } else {
+                
+                divErro.textContent = data.mensagem;
+            }
+        })
+        .catch(error => {
+            console.error('Erro na requisição:', error);
+            divErro.textContent = "Erro ao tentar fazer login. Tente novamente.";
+        });
+    });
+</script>
+</body>
+</html>
