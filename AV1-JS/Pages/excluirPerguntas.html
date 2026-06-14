@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Style/menu.css" />
+    <link rel="stylesheet" href="../Style/formularios.css" />
+    <title>Excluir Perguntas</title>
+    
+    <script src="../Script/excluirPerguntas.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <table style="border: 1">
+        <tr>
+          <th><a href="criaPerguntaEscolha.html">Criar Perguntas e Respostas Multipla Escolha</a></th>
+          <th><a href="criaPerguntaTexto.html">Criar Perguntas e Respostas de Texto</a></th>
+          <th><a href="alterarPME.html">Alterar Perguntas e Respostas Multipla Escolha</a></th>
+          <th><a href="alterarPT.html">Alterar Perguntas e Respostas de Texto</a></th>
+          <th><a href="listarPerguntas.html">Listar Perguntas</a></th>
+          <th><a href="listarPergunta.php">Listar uma Pergunta</a></th>
+          <th><a href="excluirPerguntas.html">Excluir Perguntas</a></th>
+        </tr>
+      </table>
+    </header>
+
+    <main class="container-principal">
+      <div class="box-formulario">
+        <h2>Excluir Pergunta</h2>
+        
+        <form id="formExcluir">
+          <div class="grupo-input">
+            <label>Qual tipo de pergunta você quer excluir?</label>
+            <div style="display: flex; gap: 15px; margin-top: 10px;">
+              <label style="font-weight: normal; cursor: pointer;">
+                <input type="radio" name="tipoPergunta" value="texto" required> Dissertativa (Texto)
+              </label>
+              <label style="font-weight: normal; cursor: pointer;">
+                <input type="radio" name="tipoPergunta" value="multipla" required> Múltipla Escolha
+              </label>
+            </div>
+          </div>
+
+          <div class="grupo-input">
+            <label for="seletorPergunta">Selecione a pergunta:</label>
+            <select id="seletorPergunta" required disabled>
+                <option value="">Escolha um tipo acima primeiro...</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-salvar" style="background-color: #e74c3c;">Excluir Definitivamente</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

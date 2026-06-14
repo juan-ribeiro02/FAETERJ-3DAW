@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+}
+
+header {
+    background-color: #4a90e2;
+    padding: 15px 0;
+}
+
+header table {
+    width: 100%;
+    text-align: center;
+}
+
+header th {
+    padding: 10px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background-color: #357abd;
+    display: inline-block;
+    transition: 0.2s;
+}
+
+header a:hover {
+    background-color: #2a5f94;
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Style/menu.css" />
+    <link rel="stylesheet" href="../Style/formularios.css" />
+    <title>Alterar Pergunta de Texto</title>
+    
+    <script src="../Script/alterarPT.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <table style="border: 1">
+        <tr>
+          <th><a href="criaPerguntaEscolha.html">Criar Perguntas e Respostas Multipla Escolha</a></th>
+          <th><a href="criaPerguntaTexto.html">Criar Perguntas e Respostas de Texto</a></th>
+          <th><a href="alterarPME.html">Alterar Perguntas e Respostas Multipla Escolha</a></th>
+          <th><a href="alterarPT.html">Alterar Perguntas e Respostas de Texto</a></th>
+          <th><a href="listarPerguntas.html">Listar Perguntas</a></th>
+          <th><a href="listarPergunta.php">Listar uma Pergunta</a></th>
+          <th><a href="excluirPerguntas.html">Excluir Perguntas</a></th>
+        </tr>
+      </table>
+    </header>
+
+    <main class="container-principal">
+      <div class="box-formulario">
+        <h2>Alterar Pergunta de Texto</h2>
+        
+        <div class="grupo-input">
+            <label for="seletorPergunta">Selecione a pergunta para editar:</label>
+            <select id="seletorPergunta">
+                <option value="">Carregando perguntas...</option>
+            </select>
+        </div>
+
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+        <form id="formPT" style="display: none;">
+          <input type="hidden" id="idPergunta">
+
+          <div class="grupo-input">
+            <label for="pergunta">Enunciado da Pergunta:</label>
+            <textarea id="pergunta" name="pergunta" rows="4" required></textarea>
+          </div>
+
+          <div class="grupo-input">
+            <label for="resposta">Resposta Esperada:</label>
+            <textarea id="resposta" name="resposta" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-salvar">Atualizar Pergunta</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

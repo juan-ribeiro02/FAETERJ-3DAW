@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Style/menu.css" />
+    <link rel="stylesheet" href="../Style/formularios.css" />
+    <title>Criar Pergunta de Múltipla Escolha</title>
+    
+    <script src="../Script/criaPME.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <table style="border: 1">
+        <tr>
+          <th><a href="criaPerguntaEscolha.html">Criar Perguntas e Respostas Multipla Escolha</a></th>
+          <th><a href="criaPerguntaTexto.html">Criar Perguntas e Respostas de Texto</a></th>
+          <th><a href="alterarPME.html">Alterar Perguntas e Respostas Multipla Escolha</a></th>
+          <th><a href="alterarPT.html">Alterar Perguntas e Respostas de Texto</a></th>
+          <th><a href="listarPerguntas.html">Listar Perguntas</a></th>
+          <th><a href="listarPergunta.php">Listar uma Pergunta</a></th>
+          <th><a href="excluirPerguntas.html">Excluir Perguntas</a></th>
+        </tr>
+      </table>
+    </header>
+
+    <main class="container-principal">
+      <div class="box-formulario">
+        <h2>Nova Pergunta de Múltipla Escolha</h2>
+        
+        <form id="formPME">
+          <div class="grupo-input">
+            <label for="pergunta">Enunciado da Pergunta:</label>
+            <textarea id="pergunta" name="pergunta" rows="4" required placeholder="Digite a pergunta aqui..."></textarea>
+          </div>
+
+          <div class="grupo-input">
+            <label for="alt1">Alternativa 1:</label>
+            <input type="text" id="alt1" name="alternativa_1" required placeholder="Ex: Opção A" />
+          </div>
+
+          <div class="grupo-input">
+            <label for="alt2">Alternativa 2:</label>
+            <input type="text" id="alt2" name="alternativa_2" required placeholder="Ex: Opção B" />
+          </div>
+
+          <div class="grupo-input">
+            <label for="alt3">Alternativa 3:</label>
+            <input type="text" id="alt3" name="alternativa_3" required placeholder="Ex: Opção C" />
+          </div>
+
+          <div class="grupo-input">
+            <label for="alt4">Alternativa 4:</label>
+            <input type="text" id="alt4" name="alternativa_4" required placeholder="Ex: Opção D" />
+          </div>
+
+          <div class="grupo-input">
+            <label for="resposta">Qual é a alternativa correta?</label>
+            <select id="resposta" name="resposta" required>
+              <option value="">Selecione a resposta certa...</option>
+              <option value="1">Alternativa 1</option>
+              <option value="2">Alternativa 2</option>
+              <option value="3">Alternativa 3</option>
+              <option value="4">Alternativa 4</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-salvar">Salvar Pergunta</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

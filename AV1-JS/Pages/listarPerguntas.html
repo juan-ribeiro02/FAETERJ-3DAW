@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Style/menu.css" />
+    <link rel="stylesheet" href="../Style/listagem.css" />
+    <title>Listar Perguntas</title>
+
+    <script src="../Script/listarPerguntas.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <table style="border: 1">
+        <tr>
+          <th><a href="criaPerguntaEscolha.html">Criar Perguntas e Respostas Multipla Escolha</a></th>
+          <th><a href="criaPerguntaTexto.html">Criar Perguntas e Respostas de Texto</a></th>
+          <th><a href="alterarPME.html">Alterar Perguntas e Respostas Multipla Escolha</a></th>
+          <th><a href="alterarPT.html">Alterar Perguntas e Respostas de Texto</a></th>
+          <th><a href="listarPerguntas.html">Listar Perguntas</a></th>
+          <th><a href="listarPergunta.php">Listar uma Pergunta</a></th>
+          <th><a href="excluirPerguntas.html">Excluir Perguntas</a></th>
+        </tr>
+      </table>
+    </header>
+
+    <main class="container-listagem">
+      <section class="sessao-perguntas">
+        <h2>Perguntas de Texto (Dissertativas)</h2>
+        <div id="containerTexto">
+          <p class="lista-vazia">Carregando perguntas...</p>
+        </div>
+      </section>
+
+      <section class="sessao-perguntas">
+        <h2>Perguntas de Múltipla Escolha</h2>
+        <div id="containerMultipla">
+          <p class="lista-vazia">Carregando perguntas...</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

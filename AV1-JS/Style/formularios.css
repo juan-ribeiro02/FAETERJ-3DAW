@@ -1,0 +1,75 @@
+/* Container principal para centralizar o formulário */
+.container-principal {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Caixa branca onde o formulário ficará */
+.box-formulario {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box-formulario h2 {
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Espaçamento entre os campos */
+.grupo-input {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-input label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Estilo padronizado para inputs, selects e textareas */
+.grupo-input input,
+.grupo-input textarea,
+.grupo-input select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.grupo-input input:focus,
+.grupo-input textarea:focus,
+.grupo-input select:focus {
+    outline: none;
+    border-color: #4a90e2; /* Azul combinando com o header */
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+/* Estilo do botão de salvar */
+.btn-salvar {
+    width: 100%;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.btn-salvar:hover {
+    background-color: #357abd;
+}

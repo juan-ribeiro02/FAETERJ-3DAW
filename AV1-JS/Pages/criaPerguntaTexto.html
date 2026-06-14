@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Style/menu.css" />
+    <link rel="stylesheet" href="../Style/formularios.css" />
+    <title>Criar Pergunta de Texto</title>
+    
+    <script src="../Script/criaPT.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <table style="border: 1">
+        <tr>
+          <th><a href="criaPerguntaEscolha.html">Criar Perguntas e Respostas Multipla Escolha</a></th>
+          <th><a href="criaPerguntaTexto.html">Criar Perguntas e Respostas de Texto</a></th>
+          <th><a href="alterarPME.html">Alterar Perguntas e Respostas Multipla Escolha</a></th>
+          <th><a href="alterarPT.html">Alterar Perguntas e Respostas de Texto</a></th>
+          <th><a href="listarPerguntas.html">Listar Perguntas</a></th>
+          <th><a href="listarPergunta.php">Listar uma Pergunta</a></th>
+          <th><a href="excluirPerguntas.html">Excluir Perguntas</a></th>
+        </tr>
+      </table>
+    </header>
+
+    <main class="container-principal">
+      <div class="box-formulario">
+        <h2>Nova Pergunta de Texto (Dissertativa)</h2>
+        
+        <form id="formPT">
+          <div class="grupo-input">
+            <label for="pergunta">Enunciado da Pergunta:</label>
+            <textarea id="pergunta" name="pergunta" rows="4" required placeholder="Digite a pergunta aqui..."></textarea>
+          </div>
+
+          <div class="grupo-input">
+            <label for="resposta">Resposta Esperada:</label>
+            <textarea id="resposta" name="resposta" rows="4" required placeholder="Digite a resposta correta aqui..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-salvar">Salvar Pergunta</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
