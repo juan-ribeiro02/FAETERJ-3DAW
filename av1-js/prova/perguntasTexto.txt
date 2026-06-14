@@ -1,2 +1,0 @@
-Id;Pergunta;Resposta
-01;cite 3 verbos de primeira conjugaçao;amar, lugar, somar
