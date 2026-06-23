@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Studio V — Salão de Beleza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">STUDIO V</a>
+  <div class="nav-links">
+    <a href="#" onclick="openModal('login'); return false;" class="nav-btn-entrar">Entrar</a>
+    <a href="#">Serviços</a>
+    <a href="#">Agendar</a>
+    <a href="#">Promoções</a>
+    <a href="#">Pacotes</a>
+    <a href="#">Meus agendamentos</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-deco">✂</div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Cabelereiros experientes</p>
+    <h1 class="hero-title">Para a melhor<br>versão de você</h1>
+    <p class="hero-desc">Transforme seu visual com profissionais apaixonados pela arte de cuidar dos seus cabelos. Agende agora e descubra o que é se sentir verdadeiramente especial.</p>
+    <button class="hero-cta" onclick="openModal('login')">Agendar agora</button>
+  </div>
+</section>
+
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fechar">✕</button>
+    <div class="modal-logo">STUDIO V</div>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tabLogin" onclick="switchTab('login')">Entrar</button>
+      <button class="modal-tab" id="tabRegister" onclick="switchTab('register')">Criar conta</button>
+    </div>
+
+    <div class="modal-form active" id="formLogin">
+      <div>
+        <label for="loginEmail">E-mail</label>
+        <input type="email" id="loginEmail" placeholder="seu@email.com" autocomplete="email"/>
+      </div>
+      <div>
+        <label for="loginPassword">Senha</label>
+        <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password"/>
+      </div>
+      <button class="form-submit" onclick="handleLogin()">Entrar</button>
+      <p class="form-footer"><a href="#">Esqueceu a senha?</a></p>
+      <div class="divider">ou</div>
+      <p class="form-footer">Não tem conta? <a onclick="switchTab('register')">Criar conta</a></p>
+    </div>
+
+    <div class="modal-form" id="formRegister">
+      <div class="input-row">
+        <div>
+          <label for="regNome">Nome</label>
+          <input type="text" id="regNome" placeholder="Ana" autocomplete="given-name"/>
+        </div>
+        <div>
+          <label for="regSobrenome">Sobrenome</label>
+          <input type="text" id="regSobrenome" placeholder="Silva" autocomplete="family-name"/>
+        </div>
+      </div>
+      <div>
+        <label for="regEmail">E-mail</label>
+        <input type="email" id="regEmail" placeholder="seu@email.com" autocomplete="email"/>
+      </div>
+      <div>
+        <label for="regTel">Telefone</label>
+        <input type="tel" id="regTel" placeholder="(21) 99999-9999" autocomplete="tel"/>
+      </div>
+      <div>
+        <label for="regPassword">Senha</label>
+        <input type="password" id="regPassword" placeholder="Mínimo 8 caracteres" autocomplete="new-password"/>
+      </div>
+      <div>
+        <label for="regPasswordConf">Confirmar senha</label>
+        <input type="password" id="regPasswordConf" placeholder="Repita a senha" autocomplete="new-password"/>
+      </div>
+      <button class="form-submit" onclick="handleRegister()">Criar conta</button>
+      <p class="form-footer">Já tem conta? <a onclick="switchTab('login')">Entrar</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="main.js"></script>
+</body>
+</html>
