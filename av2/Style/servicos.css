@@ -1,0 +1,215 @@
+/* SERVICES PAGE */
+.sv-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 100px 2rem 4rem;
+}
+.sv-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.sv-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: var(--white);
+  margin-top: 0.4rem;
+}
+.sv-category {
+  margin-bottom: 3rem;
+}
+.sv-cat-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.sv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.sv-card {
+  background: var(--dark-mid);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 8px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s, background 0.2s;
+}
+.sv-card:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.06);
+  transform: translateY(-2px);
+}
+.sv-card-icon {
+  font-size: 1.5rem;
+  width: 40px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.sv-card-info h3 {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+.sv-card-info p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.sv-price {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* AGENDA MODAL */
+.agenda-modal { max-width: 420px; }
+
+.agenda-service-name {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+}
+.agenda-step-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.hidden { display: none !important; }
+
+/* CALENDAR */
+.agenda-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.4rem;
+  margin-bottom: 1.4rem;
+}
+.cal-day-name {
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  padding-bottom: 0.3rem;
+  letter-spacing: 0.06em;
+}
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  color: var(--text);
+  transition: all 0.15s;
+}
+.cal-day:hover:not(.cal-disabled) { border-color: var(--gold); color: var(--gold); }
+.cal-day.cal-disabled { color: rgba(154,149,133,0.3); cursor: default; }
+.cal-day.cal-selected { background: var(--gold); color: var(--dark); font-weight: 700; border-color: var(--gold); }
+.cal-day.cal-empty { cursor: default; }
+
+/* TIMES */
+.agenda-times {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+.time-slot {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.82rem;
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text);
+  transition: all 0.15s;
+}
+.time-slot:hover { border-color: var(--gold); color: var(--gold); }
+.time-slot.time-selected { background: var(--gold); color: var(--dark); font-weight: 700; border-color: var(--gold); }
+.time-slot.time-busy { color: rgba(154,149,133,0.3); border-color: rgba(154,149,133,0.1); cursor: default; }
+
+/* CONFIRM */
+.agenda-confirm-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.confirm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+}
+.confirm-row span { color: var(--text-muted); }
+.confirm-row strong { color: var(--white); }
+.confirm-total { padding-top: 0.7rem; border-top: 1px solid rgba(201,168,76,0.15); }
+.confirm-total strong { color: var(--gold); font-size: 1rem; }
+
+/* NAV BUTTONS */
+.agenda-nav {
+  display: flex;
+  gap: 0.7rem;
+}
+.agenda-btn {
+  flex: 1; padding: 0.75rem;
+  background: var(--gold); color: var(--dark);
+  border: none; border-radius: 4px;
+  font-size: 0.88rem; font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer; transition: background 0.2s;
+}
+.agenda-btn:hover:not(:disabled) { background: var(--gold-light); }
+.agenda-btn:disabled { opacity: 0.35; cursor: default; }
+.agenda-btn-outline {
+  flex: 1; padding: 0.75rem;
+  background: none; color: var(--text-muted);
+  border: 1px solid rgba(201,168,76,0.2); border-radius: 4px;
+  font-size: 0.88rem; font-family: 'Inter', sans-serif;
+  cursor: pointer; transition: border-color 0.2s, color 0.2s;
+}
+.agenda-btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* SUCCESS */
+.success-icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.15);
+  border: 2px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; color: var(--gold);
+  margin: 0 auto 1rem;
+}
+.success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; text-align: center; color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.success-sub { text-align: center; color: var(--text-muted); font-size: 0.88rem; }
+
+/* NAV ACTIVE */
+.nav-active { color: var(--gold) !important; }
+
+@media (max-width: 600px) {
+  .sv-grid { grid-template-columns: 1fr; }
+  .agenda-times { grid-template-columns: repeat(3, 1fr); }
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="base" content="../">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Studio V — Serviços</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../Style/style.css"/>
+  <link rel="stylesheet" href="../Style/servicos.css"/>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">STUDIO V</a>
+  <div class="nav-links">
+    <a href="../index.html">Início</a>
+    <a href="servicos.html" class="nav-active">Serviços e Agendamento</a>
+    <a href="minha-conta.html">Minha Conta</a>
+    <!-- <a href="#" onclick="openModal('login'); return false;" class="nav-btn-entrar">Entrar</a> -->
+  </div>
+</nav>
+
+<main class="sv-main">
+  <div class="sv-header">
+    <p class="hero-eyebrow">O que oferecemos</p>
+    <h1 class="sv-title">Nossos Serviços</h1>
+  </div>
+
+  <!-- CABELO -->
+  <section class="sv-category">
+    <h2 class="sv-cat-title"> Cabelo</h2>
+    <div class="sv-grid">
+      <div class="sv-card" onclick="openAgenda('Corte de Cabelo', 40, 89)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Corte de Cabelo</h3>
+          <p>Tempo: 40 min</p>
+          <span class="sv-price">R$ 89,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Pintura de Cabelo', 120, 180)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Pintura de Cabelo</h3>
+          <p>Tempo: 2h</p>
+          <span class="sv-price">R$ 180,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Progressiva', 180, 250)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Progressiva</h3>
+          <p>Tempo: 3h</p>
+          <span class="sv-price">R$ 250,00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BARBEIRO -->
+  <section class="sv-category">
+    <h2 class="sv-cat-title">Barbeiro</h2>
+    <div class="sv-grid">
+      <div class="sv-card" onclick="openAgenda('Corte de Cabelo Masc.', 30, 55)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Corte de Cabelo</h3>
+          <p>Tempo: 30 min</p>
+          <span class="sv-price">R$ 55,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Barba Simples', 20, 40)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Barba Simples</h3>
+          <p>Tempo: 20 min</p>
+          <span class="sv-price">R$ 40,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Corte + Barba', 50, 90)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Corte + Barba</h3>
+          <p>Tempo: 50 min</p>
+          <span class="sv-price">R$ 90,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Barba Degradê', 40, 65)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Barba Degradê</h3>
+          <p>Tempo: 40 min</p>
+          <span class="sv-price">R$ 65,00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANICURE -->
+  <section class="sv-category">
+    <h2 class="sv-cat-title">Manicure</h2>
+    <div class="sv-grid">
+      <div class="sv-card" onclick="openAgenda('Banho de Fibra', 90, 120)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Banho de Fibra</h3>
+          <p>Tempo: 1h30</p>
+          <span class="sv-price">R$ 120,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Colocação de Unhas de Gel', 90, 150)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Unhas de Gel</h3>
+          <p>Tempo: 1h30</p>
+          <span class="sv-price">R$ 150,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Manutenção de Unhas de Gel', 60, 80)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Manutenção de Gel</h3>
+          <p>Tempo: 1h</p>
+          <span class="sv-price">R$ 80,00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPA -->
+  <section class="sv-category">
+    <h2 class="sv-cat-title">SPA</h2>
+    <div class="sv-grid">
+      <div class="sv-card" onclick="openAgenda('Massagem com Bambu', 60, 200)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Massagem com Bambu</h3>
+          <p>Tempo: 1h</p>
+          <span class="sv-price">R$ 200,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Banho Terapêutico', 60, 180)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Banho Terapêutico</h3>
+          <p>Tempo: 1h</p>
+          <span class="sv-price">R$ 180,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Pedras Quentes', 90, 220)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Pedras Quentes</h3>
+          <p>Tempo: 1h30</p>
+          <span class="sv-price">R$ 220,00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRANCELHA -->
+  <section class="sv-category">
+    <h2 class="sv-cat-title">Sobrancelha</h2>
+    <div class="sv-grid">
+      <div class="sv-card" onclick="openAgenda('Design de Sobrancelha', 30, 60)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Design de Sobrancelha</h3>
+          <p>Tempo: 30 min</p>
+          <span class="sv-price">R$ 60,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Sobrancelha Masculina', 20, 40)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Sobrancelha Masculina</h3>
+          <p>Tempo: 20 min</p>
+          <span class="sv-price">R$ 40,00</span>
+        </div>
+      </div>
+      <div class="sv-card" onclick="openAgenda('Henna na Sobrancelha', 40, 75)">
+        <div class="sv-card-icon"></div>
+        <div class="sv-card-info">
+          <h3>Henna na Sobrancelha</h3>
+          <p>Tempo: 40 min</p>
+          <span class="sv-price">R$ 75,00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- MODAL DE AGENDAMENTO -->
+<div class="modal-overlay" id="agendaOverlay" onclick="closeAgendaOverlay(event)">
+  <div class="modal agenda-modal">
+    <button class="modal-close" onclick="closeAgenda()">✕</button>
+
+    <!-- STEP 1: DIA -->
+    <div class="agenda-step" id="step1">
+      <div class="modal-logo">STUDIO V</div>
+      <h3 class="agenda-service-name" id="agendaServiceName"></h3>
+      <p class="agenda-step-label">Escolha o dia</p>
+      <div class="agenda-calendar" id="agendaCalendar"></div>
+      <div class="agenda-nav">
+        <button class="agenda-btn-outline" onclick="closeAgenda()">Cancelar</button>
+        <button class="agenda-btn" id="btnStep2" disabled>Próximo →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: HORÁRIO -->
+    <div class="agenda-step hidden" id="step2">
+      <div class="modal-logo">STUDIO V</div>
+      <h3 class="agenda-service-name" id="agendaServiceName2"></h3>
+      <p class="agenda-step-label">Escolha o horário — <span id="selectedDayLabel"></span></p>
+      <div class="agenda-times" id="agendaTimes"></div>
+      <div class="agenda-nav">
+        <button class="agenda-btn-outline" onclick="goStep(1)">← Voltar</button>
+        <button class="agenda-btn" onclick="goStep(3)" id="btnStep3" disabled>Próximo →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: CONFIRMAÇÃO -->
+    <div class="agenda-step hidden" id="step3">
+      <div class="modal-logo">STUDIO V</div>
+      <p class="agenda-step-label">Confirme seu agendamento</p>
+      <div class="agenda-confirm-box">
+        <div class="confirm-row"><span>Serviço</span><strong id="cService"></strong></div>
+        <div class="confirm-row"><span>Data</span><strong id="cDate"></strong></div>
+        <div class="confirm-row"><span>Horário</span><strong id="cTime"></strong></div>
+        <div class="confirm-row"><span>Duração</span><strong id="cDuration"></strong></div>
+        <div class="confirm-row confirm-total"><span>Valor</span><strong id="cPrice"></strong></div>
+      </div>
+      <div class="agenda-nav">
+        <button class="agenda-btn-outline" onclick="goStep(2)">← Voltar</button>
+        <button class="agenda-btn" onclick="confirmAgenda()">Confirmar ✓</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: SUCESSO -->
+    <div class="agenda-step hidden" id="step4">
+      <div class="success-icon">✓</div>
+      <h3 class="success-title">Agendado!</h3>
+      <p class="success-sub">Seu horário foi reservado com sucesso.</p>
+      <button class="agenda-btn" style="width:100%;margin-top:1.5rem" onclick="closeAgenda()">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="../Script/main.js"></script>
+<script src="../Script/servicos.js"></script>
+<script src="../Script/auth.js"></script> 
+</body>
+</html>

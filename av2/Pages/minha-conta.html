@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="base" content="../">
+  <title>Studio V — Minha Conta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../Style/style.css"/>
+  <link rel="stylesheet" href="../Style/minha-conta.css"/>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">STUDIO V</a>
+  <div class="nav-links">
+    <a href="../index.html">Início</a>
+    <a href="servicos.html">Serviços e Agendamento</a>
+    <a href="minha-conta.html" class="nav-active">Minha conta</a>
+    <a href="#" onclick="logout(); return false;" class="nav-btn-entrar">Sair</a>
+  </div>
+</nav>
+
+<main class="mc-main">
+
+  <!-- PERFIL -->
+  <section class="mc-profile-section">
+    <div class="mc-avatar">
+      <span id="avatarInitials">AS</span>
+    </div>
+    <div class="mc-profile-info">
+      <p class="hero-eyebrow">Bem-vinda de volta</p>
+      <h1 class="mc-name" id="userName">Ana Silva</h1>
+      <p class="mc-email" id="userEmail">ana.silva@email.com</p>
+    </div>
+    <button class="mc-edit-btn" onclick="toggleEdit()">✎ Editar perfil</button>
+  </section>
+
+  <!-- EDITAR PERFIL (oculto por padrão) -->
+  <section class="mc-edit-section hidden" id="editSection">
+    <h2 class="mc-section-title">Editar Perfil</h2>
+    <div class="mc-edit-grid">
+      <div>
+        <label for="editNome">Nome</label>
+        <input type="text" id="editNome" value="Ana"/>
+      </div>
+      <div>
+        <label for="editSobrenome">Sobrenome</label>
+        <input type="text" id="editSobrenome" value="Silva"/>
+      </div>
+      <div>
+        <label for="editEmail">E-mail</label>
+        <input type="email" id="editEmail" value="ana.silva@email.com"/>
+      </div>
+      <div>
+        <label for="editTel">Telefone</label>
+        <input type="tel" id="editTel" value="(21) 99999-9999"/>
+      </div>
+      <div>
+        <label for="editSenha">Nova senha</label>
+        <input type="password" id="editSenha" placeholder="Deixe em branco para manter"/>
+      </div>
+      <div>
+        <label for="editSenhaConf">Confirmar nova senha</label>
+        <input type="password" id="editSenhaConf" placeholder="Repita a nova senha"/>
+      </div>
+    </div>
+    <div class="mc-edit-actions">
+      <button class="agenda-btn-outline" onclick="toggleEdit()">Cancelar</button>
+      <button class="agenda-btn" onclick="saveEdit()">Salvar alterações</button>
+    </div>
+  </section>
+
+  <!-- AGENDAMENTOS -->
+  <section class="mc-appointments">
+    <div class="mc-section-header">
+      <h2 class="mc-section-title">Meus Agendamentos</h2>
+      <div class="mc-tabs">
+        <button class="mc-tab active" onclick="filterTab('proximos', this)">Próximos</button>
+        <button class="mc-tab" onclick="filterTab('concluidos', this)">Concluídos</button>
+        <button class="mc-tab" onclick="filterTab('cancelados', this)">Cancelados</button>
+      </div>
+    </div>
+
+    <!-- PRÓXIMOS -->
+    <div id="tab-proximos">
+      <div class="mc-appointment-card">
+        <div class="mc-appt-icon">✂</div>
+        <div class="mc-appt-info">
+          <h3>Corte de Cabelo</h3>
+          <p>📅 28 de julho de 2025 — 10:00</p>
+          <p>⏱ 40 min &nbsp;·&nbsp; R$ 89,00</p>
+        </div>
+        <div class="mc-appt-right">
+          <span class="mc-badge mc-badge-upcoming">Confirmado</span>
+          <button class="mc-cancel-btn" onclick="cancelAppt(this)">Cancelar</button>
+        </div>
+      </div>
+      <div class="mc-appointment-card">
+        <div class="mc-appt-icon">💅</div>
+        <div class="mc-appt-info">
+          <h3>Unhas de Gel</h3>
+          <p>📅 02 de agosto de 2025 — 14:00</p>
+          <p>⏱ 1h30 &nbsp;·&nbsp; R$ 150,00</p>
+        </div>
+        <div class="mc-appt-right">
+          <span class="mc-badge mc-badge-upcoming">Confirmado</span>
+          <button class="mc-cancel-btn" onclick="cancelAppt(this)">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCLUÍDOS -->
+    <div id="tab-concluidos" class="hidden">
+      <div class="mc-appointment-card">
+        <div class="mc-appt-icon">🌿</div>
+        <div class="mc-appt-info">
+          <h3>Massagem com Bambu</h3>
+          <p>📅 10 de junho de 2025 — 11:00</p>
+          <p>⏱ 1h &nbsp;·&nbsp; R$ 200,00</p>
+        </div>
+        <div class="mc-appt-right">
+          <span class="mc-badge mc-badge-done">Concluído</span>
+        </div>
+      </div>
+      <div class="mc-appointment-card">
+        <div class="mc-appt-icon">✏️</div>
+        <div class="mc-appt-info">
+          <h3>Design de Sobrancelha</h3>
+          <p>📅 01 de junho de 2025 — 09:30</p>
+          <p>⏱ 30 min &nbsp;·&nbsp; R$ 60,00</p>
+        </div>
+        <div class="mc-appt-right">
+          <span class="mc-badge mc-badge-done">Concluído</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CANCELADOS -->
+    <div id="tab-cancelados" class="hidden">
+      <div class="mc-appointment-card mc-appt-cancelled">
+        <div class="mc-appt-icon">🪒</div>
+        <div class="mc-appt-info">
+          <h3>Barba Simples</h3>
+          <p>📅 15 de maio de 2025 — 15:00</p>
+          <p>⏱ 20 min &nbsp;·&nbsp; R$ 40,00</p>
+        </div>
+        <div class="mc-appt-right">
+          <span class="mc-badge mc-badge-cancelled">Cancelado</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="../Script/main.js"></script>
+<script src="../Script/minha-conta.js"></script>
+<script src="../Script/auth.js"></script> 
+</body>
+</html>
